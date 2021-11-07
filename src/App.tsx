@@ -7,10 +7,15 @@ import {
   getDefaultCircle,
   getDefaultLine,
   getDefaultRect,
-} from "./shape-defaults.js";
+  CircleProps,
+  LineProps,
+  RectProps,
+} from "./shape-defaults";
 
 export default function App() {
-  const [shapes, setShapes] = useState([]);
+  const [shapes, setShapes] = useState<
+    Array<CircleProps | LineProps | RectProps>
+  >([]);
 
   return (
     <div className="App">

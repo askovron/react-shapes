@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import CanvasContext from "../canvas-context";
+import { CircleProps } from "../shape-defaults";
 
-export default function ShapeLine(props) {
+export default function ShapeCircle(props: CircleProps): JSX.Element {
   const { shapes, setShapes } = useContext(CanvasContext);
 
-  function onChange(key, value) {
+  function onChange(key: string, value: string | number) {
     setShapes(
       shapes
         .filter(({ id: sid }) => sid !== props.id)
@@ -21,11 +22,11 @@ export default function ShapeLine(props) {
   }
 
   return (
-    <div className="shapeEdit">
-      <div>Rectangle {props.id.slice(1)}</div>
-      <div className="shapeControls">
+    <div className="shapeEdit circle">
+      <div>Line {props.id.slice(1)}</div>
+      <div className="shapeControls circle">
         <label>
-          <span>Fill color</span>
+          <span>Fill Color</span>
           <input
             onChange={({ target }) => onChange("fill", target.value)}
             value={props.fill}
@@ -34,29 +35,22 @@ export default function ShapeLine(props) {
         <label>
           <span>Left</span>
           <input
-            onChange={({ target }) => onChange("x1", target.value)}
-            value={props.x1}
+            onChange={({ target }) => onChange("cx", target.value)}
+            value={props.cx}
           />
         </label>
         <label>
           <span>Top</span>
           <input
-            onChange={({ target }) => onChange("y1", target.value)}
-            value={props.y1}
+            onChange={({ target }) => onChange("cy", target.value)}
+            value={props.cy}
           />
         </label>
         <label>
-          <span>Width</span>
+          <span>Radius</span>
           <input
-            onChange={({ target }) => onChange("width", target.value)}
-            value={props.width}
-          />
-        </label>
-        <label>
-          <span>Height</span>
-          <input
-            onChange={({ target }) => onChange("height", target.value)}
-            value={props.height}
+            onChange={({ target }) => onChange("r", target.value)}
+            value={props.r}
           />
         </label>
       </div>
