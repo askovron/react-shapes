@@ -7,9 +7,7 @@ export default function ShapesEdit() {
 
   if (shapes.length === 0) return <p>You haven't added any shapes yet</p>;
 
-  return [
-    shapes.map(({ id, shape, ...props }) => (
-      <ShapeEdit key={id} id={id} shape={shape} {...props} />
-    )),
-  ];
+  return shapes.map(({ id, shape, ...props }) => (
+    <ShapeEdit key={id} id={id} shape={shape} {...props} />
+  ));
 }
