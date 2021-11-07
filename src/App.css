@@ -1,38 +1,85 @@
-.App {
+.canvas {
+  margin-bottom: 1rem;
+  border: 1px darkgrey solid;
+  background: lightgray;
+}
+
+.app {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.addShapes {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.addShapes button {
+  width: 10rem;
+  border: none;
+  line-height: 3;
+  background: #5d98ff;
   color: white;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.addShapes button:hover {
+  opacity: 0.9;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.shapeEdit {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.shapeEdit:nth-child(odd) {
+  background: gray;
+}
+
+.shapeEdit div:first-child {
+  width: 7rem;
+}
+
+.shapeEdit:nth-child(odd) {
+  background: rgb(141 165 206 / 10%);
+}
+
+.shapeControls {
+  display: flex;
+  flex: 1;
+  flex-flow: column wrap;
+  align-content: flex-start;
+  justify-content: flex-end;
+  height: 5rem;
+  margin: 0 1rem;
+}
+
+.shapeControls.circle {
+  justify-content: center;
+}
+
+.shapeControls span {
+  display: inline-block;
+  width: 5rem;
+}
+
+.shapeControls label + label {
+  margin-top: 0.5rem;
+}
+
+.shapeControls label:nth-child(3n + 1) {
+  margin-top: 0;
+}
+.shapeControls label:nth-child(n + 4) {
+  margin-left: 1rem;
+}
+
+.shapeDelete {
+  background: none;
+  border: none;
+  color: red;
+  align-self: flex-start;
+  cursor: pointer;
 }
